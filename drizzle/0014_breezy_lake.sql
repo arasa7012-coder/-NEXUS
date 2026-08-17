@@ -1,0 +1,1 @@
+ALTER TABLE `userCopilotPreferences` ADD `riskTolerance` enum('CONSERVATIVE','BALANCED','AGGRESSIVE') DEFAULT 'BALANCED' NOT NULL;

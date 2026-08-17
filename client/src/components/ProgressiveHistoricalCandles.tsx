@@ -1,0 +1,21 @@
+import { useEffect, useMemo, useState } from "react";
+import { History } from "lucide-react";
+import CandlestickChart, { type ChartAnnotation } from "@/components/CandlestickChart";
+import { trpc } from "@/lib/trpc";
+import { mergeProgressiveCandles, type ProgressiveCandle } from "@/lib/progressiveCandles";
+
+type TradeEvidence = { decision: string; stopPriceUsd: number | null; targetPriceUsd: number | null; };
+export default function ProgressiveHistoricalCandles({ datasetId, trades }: { datasetId: number; trades: TradeEvidence[] }) {
+  const [beforeSequence, setBeforeSequence] = useState<number | null>(null); const [candles, setCandles] = useState<ProgressiveCandle[]>([]); const [nextBeforeSequence, setNextBeforeSequence] = useState<number | null>(null); const [hasMoreOlder, setHasMoreOlder] = useState(false); const [gapCount, setGapCount] = useState(0); const [integrityError, setIntegrityError] = useState<string | null>(null);
+  useEffect(() => { setBeforeSequence(null); setCandles([]); setNextBeforeSequence(null); setHasMoreOlder(false); setGapCount(0); setIntegrityError(null); }, [datasetId]);
+  const input = useMemo(() => ({ datasetId, limit: 120, beforeSequence }), [beforeSequence, datasetId]);
+  const page = trpc.strategyLab.getDatasetCandles.useQuery(input, { enabled: datasetId > 0, retry: false });
+  useEffect(() => { if (!page.data) return; setCandles((existing) => { const merged = mergeProgressiveCandles(existing, page.data.candles, page.data.page.expectedIntervalMs); setGapCount(merged.gaps.length); setIntegrityError(merged.conflict); return merged.candles; }); setNextBeforeSequence(page.data.page.nextBeforeSequence); setHasMoreOlder(page.data.page.hasMoreOlder); }, [page.data]);
+  const loadOlder = () => { if (page.isFetching || !hasMoreOlder || nextBeforeSequence === null) return; setBeforeSequence(nextBeforeSequence); };
+  const latestPlan = [...trades].reverse().find((trade) => trade.decision === "ACCEPTED" && (trade.stopPriceUsd !== null || trade.targetPriceUsd !== null)); const annotations: ChartAnnotation[] = []; if (latestPlan?.stopPriceUsd !== null && latestPlan?.stopPriceUsd !== undefined) annotations.push({ id: "historical-stop", price: latestPlan.stopPriceUsd, label: "RECORDED STOP", tone: "risk" }); if (latestPlan?.targetPriceUsd !== null && latestPlan?.targetPriceUsd !== undefined) annotations.push({ id: "historical-target", price: latestPlan.targetPriceUsd, label: "RECORDED TARGET", tone: "target" });
+  if (integrityError) return <section className="mt-5 rounded-xl border border-danger/30 bg-danger/10 p-4 text-sm text-danger" role="alert">Historical page merge stopped: {integrityError} No conflicting candle was rendered.</section>;
+  if (page.error && !candles.length) return <section className="mt-5 rounded-xl border border-warning/30 bg-warning/10 p-4 text-sm text-warning">Historical candles are unavailable: {page.error.message}</section>;
+  if (!page.data && !candles.length) return <section className="mt-5 h-[430px] animate-pulse rounded-xl border border-border bg-background/50" aria-busy="true" />;
+  const dataset = page.data?.dataset;
+  return <section className="mt-5"><div className="mb-2 flex flex-wrap items-center justify-between gap-2 text-xs text-foreground-muted"><span className="inline-flex items-center gap-1.5"><History className="size-3.5 text-primary" />Progressive historical evidence</span><span>{candles.length} loaded{dataset ? ` of ${dataset.candleCount} stored` : ""}</span></div><CandlestickChart data={candles.map((candle) => ({ timestamp: candle.openTime, open: candle.open, high: candle.high, low: candle.low, close: candle.close, volume: candle.volume }))} symbol={`${dataset?.symbol ?? "Historical"} historical`} interval={dataset?.interval} sourceLabel={dataset ? `${dataset.provider} · ${dataset.candleFingerprint.slice(0, 10)}` : "Persisted historical data"} annotations={annotations} hasMoreOlder={hasMoreOlder} isLoadingOlder={page.isFetching && beforeSequence !== null} onRequestOlder={loadOlder} gapCount={gapCount} /><p className="mt-2 text-xs text-foreground-muted">{page.data?.disclaimer ?? "Persisted historical OHLCV evidence only."} Older pages load only when the chart reaches the loaded boundary; missing intervals remain explicit.</p></section>;
+}

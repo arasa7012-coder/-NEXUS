@@ -1,0 +1,1 @@
+ALTER TABLE `simulationRiskEvents` ADD `pendingOrderId` int;

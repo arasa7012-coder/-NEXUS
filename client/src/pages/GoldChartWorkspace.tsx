@@ -1,0 +1,19 @@
+import { useMemo, useState } from "react";
+import { ArrowLeft, BarChart3, CircleAlert } from "lucide-react";
+import { Link } from "wouter";
+import CandlestickChart from "@/components/CandlestickChart";
+import { trpc } from "@/lib/trpc";
+
+const labels = { "1m": "1m", "5m": "5m", "15m": "15m", "1h": "1H", "4h": "4H", "1d": "1D", "1w": "1W", "1mo": "1M" } as const;
+type GoldTimeframe = keyof typeof labels;
+
+export default function GoldChartWorkspace() {
+  const [timeframe, setTimeframe] = useState<GoldTimeframe>("1h");
+  const capabilities = trpc.commodityMarket.capabilities.useQuery({ assetId: "xau-usd" }, { staleTime: 60_000, retry: 1 });
+  const supported = capabilities.data?.success ? capabilities.data.data.supportedTimeframes : [];
+  const candles = trpc.commodityMarket.candles.useQuery({ assetId: "xau-usd", timeframe, limit: 160 }, { enabled: supported.includes(timeframe), staleTime: 60_000, refetchInterval: 60_000, retry: 1 });
+  const data = candles.data?.success ? candles.data.data : null;
+  const chartData = useMemo(() => (data?.candles ?? []).map((candle) => ({ timestamp: candle.openTime, open: candle.open, high: candle.high, low: candle.low, close: candle.close, volume: candle.volume ?? 0 })), [data?.candles]);
+  const error = candles.data?.success === false ? candles.data.error.message : capabilities.data?.success === false ? capabilities.data.error.message : null;
+  return <main className="nexus-surface min-h-screen text-foreground"><header className="border-b border-border bg-background/72 backdrop-blur-xl"><div className="container flex flex-col gap-4 py-6 sm:py-8"><Link href="/assets/xau-usd" className="inline-flex w-fit items-center gap-2 rounded-lg px-1 py-1.5 text-sm font-medium text-foreground-secondary hover:text-foreground focus-visible:outline-none"><ArrowLeft className="size-4" />Gold details</Link><div className="flex flex-col gap-4 lg:flex-row lg:items-end lg:justify-between"><div><p className="text-xs font-semibold uppercase tracking-[0.2em] text-primary">Commodity chart workspace</p><h1 className="mt-1 text-3xl font-semibold tracking-[-0.035em] sm:text-4xl">Gold · XAU/USD</h1><p className="mt-1 text-sm text-foreground-secondary">Twelve Data verified OHLC only. Crypto intelligence and Smart Money do not apply.</p></div><div className="flex flex-wrap rounded-md border border-border bg-card p-1" role="group" aria-label="Gold chart timeframe">{supported.map((item) => <button key={item} type="button" aria-pressed={timeframe === item} onClick={() => setTimeframe(item)} className={`nx-button px-2.5 py-1.5 text-xs font-semibold focus-visible:outline-none ${timeframe === item ? "bg-primary text-primary-foreground" : "text-foreground-secondary hover:bg-background-secondary"}`}>{labels[item]}</button>)}</div></div></div></header><div className="container py-5 sm:py-7"><section className="nx-panel p-3 shadow-[0_14px_30px_rgba(0,0,0,.28)] sm:p-4">{error ? <div className="flex min-h-80 items-center justify-center gap-2 rounded-xl border border-warning/30 bg-warning/8 px-5 text-center text-warning"><CircleAlert className="size-5 shrink-0" />{error}</div> : <CandlestickChart data={chartData} height={500} symbol="XAU/USD · Gold" interval={labels[timeframe]} sourceLabel="Twelve Data · verified OHLC" isStale={data?.isStale ?? false} showVolume={false} />}</section><section className="mt-4 rounded-xl border border-border bg-card/65 p-4 text-sm leading-6 text-foreground-secondary"><p className="flex items-center gap-2 font-semibold text-foreground"><BarChart3 className="size-4 text-primary" />Data boundary</p><p className="mt-1">The chart exposes only timeframes returned by the configured provider capability contract. Missing candles, bid/ask, and market intelligence remain unavailable rather than reconstructed.</p></section></div></main>;
+}

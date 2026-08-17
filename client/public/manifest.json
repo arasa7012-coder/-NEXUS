@@ -1,0 +1,86 @@
+{
+  "name": "Crypto AI Trading Dashboard",
+  "short_name": "Crypto AI",
+  "description": "Real-time cryptocurrency trading analysis with AI predictions",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#000000",
+  "theme_color": "#FF0000",
+  "orientation": "portrait-primary",
+  "scope": "/",
+  "icons": [
+    {
+      "src": "data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 192 192'><rect fill='%23000' width='192' height='192'/><text x='50%' y='50%' font-size='120' font-weight='bold' fill='%23FFF' text-anchor='middle' dominant-baseline='middle'>₿</text><rect x='10' y='10' width='172' height='172' fill='none' stroke='%23FF0000' stroke-width='4'/></svg>",
+      "sizes": "192x192",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    },
+    {
+      "src": "data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 512 512'><rect fill='%23000' width='512' height='512'/><text x='50%' y='50%' font-size='320' font-weight='bold' fill='%23FFF' text-anchor='middle' dominant-baseline='middle'>₿</text><rect x='20' y='20' width='472' height='472' fill='none' stroke='%23FF0000' stroke-width='10'/></svg>",
+      "sizes": "512x512",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ],
+  "categories": ["finance", "productivity"],
+  "screenshots": [
+    {
+      "src": "data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 540 720'><rect fill='%23000' width='540' height='720'/><text x='270' y='100' font-size='40' font-weight='bold' fill='%23FFF' text-anchor='middle'>CRYPTO AI TERMINAL</text><rect x='20' y='150' width='500' height='500' fill='%23111' stroke='%23FF0000' stroke-width='2'/><text x='270' y='400' font-size='30' fill='%23FFF' text-anchor='middle'>Real-time Trading Analysis</text></svg>",
+      "sizes": "540x720",
+      "type": "image/svg+xml",
+      "form_factor": "narrow"
+    }
+  ],
+  "shortcuts": [
+    {
+      "name": "Dashboard",
+      "short_name": "Dashboard",
+      "description": "Go to main dashboard",
+      "url": "/dashboard",
+      "icons": [
+        {
+          "src": "data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 96 96'><rect fill='%23FF0000' width='96' height='96'/><text x='48' y='48' font-size='60' font-weight='bold' fill='%23000' text-anchor='middle' dominant-baseline='middle'>📊</text></svg>",
+          "sizes": "96x96",
+          "type": "image/svg+xml"
+        }
+      ]
+    },
+    {
+      "name": "Portfolio",
+      "short_name": "Portfolio",
+      "description": "View your portfolio",
+      "url": "/portfolio",
+      "icons": [
+        {
+          "src": "data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 96 96'><rect fill='%23FF0000' width='96' height='96'/><text x='48' y='48' font-size='60' font-weight='bold' fill='%23000' text-anchor='middle' dominant-baseline='middle'>💼</text></svg>",
+          "sizes": "96x96",
+          "type": "image/svg+xml"
+        }
+      ]
+    },
+    {
+      "name": "Alerts",
+      "short_name": "Alerts",
+      "description": "Manage alerts",
+      "url": "/alerts",
+      "icons": [
+        {
+          "src": "data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 96 96'><rect fill='%23FF0000' width='96' height='96'/><text x='48' y='48' font-size='60' font-weight='bold' fill='%23000' text-anchor='middle' dominant-baseline='middle'>🔔</text></svg>",
+          "sizes": "96x96",
+          "type": "image/svg+xml"
+        }
+      ]
+    }
+  ],
+  "share_target": {
+    "action": "/share",
+    "method": "POST",
+    "enctype": "application/x-www-form-urlencoded",
+    "params": {
+      "title": "title",
+      "text": "text",
+      "url": "url"
+    }
+  },
+  "prefer_related_applications": false
+}

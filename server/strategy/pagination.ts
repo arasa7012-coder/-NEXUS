@@ -1,0 +1,1 @@
+export function pageDescendingSequences<T extends { sequence: number }>(rows: T[], limit: number) { if (!Number.isSafeInteger(limit) || limit < 1) throw new Error("Historical page limit must be a positive integer."); const hasMoreOlder = rows.length > limit; return { hasMoreOlder, page: rows.slice(0, limit).reverse() }; }

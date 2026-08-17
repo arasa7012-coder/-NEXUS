@@ -1,0 +1,2 @@
+ALTER TABLE `csvSourceAuthentications` DROP INDEX `csvSourceAuthentications_import_unique`;--> statement-breakpoint
+CREATE INDEX `csvSourceAuthentications_import_created_idx` ON `csvSourceAuthentications` (`importId`,`createdAt`);

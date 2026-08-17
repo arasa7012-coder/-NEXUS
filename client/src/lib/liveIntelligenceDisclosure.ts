@@ -1,0 +1,1 @@
+export const LIVE_ANALYTICAL_DISCLOSURE = "Verified provider candles refresh this analytical evidence. Any directional interpretation is probabilistic, may change, and is never a guaranteed forecast, recommendation, or execution instruction.";

@@ -1,0 +1,3 @@
+import { describe, expect, it } from "vitest";
+import { resolvePresetRange, resolveVerifiedRange } from "./chartRangeSelection";
+describe("chart range selection", () => { const coverage = { earliest: 1_000_000_000, latest: 1_086_400_000 }; it("clamps a preset to verified coverage without inventing candles", () => { const result = resolvePresetRange("7D", coverage, 60); expect(result.viewport).toEqual({ startTime: coverage.earliest, endTime: coverage.latest, visibleCandles: 60 }); expect(result.adjusted).toBe(true); }); it("rejects a custom range that does not intersect verified coverage", () => expect(resolveVerifiedRange({ startTime: 1, endTime: 2 }, coverage, 40).viewport).toBeNull()); });

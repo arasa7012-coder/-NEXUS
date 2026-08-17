@@ -1,0 +1,415 @@
+# Project TODO — Version 1.1 Continuation
+
+- [x] Audit the current source, routes, shared components, tests, and prior Version 1.1 checkpoint scope without replacing completed work.
+- [x] Review the existing Vitest files and record Version 1.1 coverage gaps before implementation.
+- [x] Preserve the existing routed information architecture and established premium fintech visual direction.
+- [x] Apply the existing typography and color-token system consistently across every routed page and shared surface.
+- [x] Standardize semantic text, background, border, focus, positive, negative, and interactive color states for accessible contrast.
+- [x] Refine shared cards, buttons, form controls, tables, tabs, badges, tooltips, and feedback states using the established component system.
+- [x] Complete the remaining dashboard, market, trading, futures, wallet, earn, portfolio, analytics, and settings interface polish without rebuilding completed screens.
+- [x] Remove visible navigation duplication or dead-end behavior while preserving clear desktop and mobile navigation flows.
+- [x] Improve loading, empty, error, confirmation, and unavailable-data states across relevant application flows.
+- [x] Optimize all primary pages and dense data views for mobile, tablet, and desktop layouts.
+- [x] Validate keyboard access, focus visibility, aria labels, reduced-motion behavior, and readable contrast across the interface.
+- [x] Improve client-side rendering performance and avoid layout regressions in the shared layout and data-heavy panels.
+- [x] Add or update focused Vitest coverage for the Version 1.1 behaviors and utilities changed in this continuation.
+- [x] Run type checks, automated tests, and visual cross-page QA; resolve discovered defects before release.
+- [x] Save the final Version 1.1 checkpoint after every tracker item is accurately marked complete.
+- [x] Remove the landing page’s duplicate navigation and use the shared shell as the single source of navigation truth.
+- [x] Wire the existing secure sign-in flow and theme control through the global navigation with accessible labels.
+- [x] Replace dynamic Tailwind utility construction in shared responsive primitives and premium pages with explicit, compile-safe class mappings.
+- [x] Upgrade the existing Trading and Futures chart placeholders with reusable terminal-quality static chart panels and appropriate data states.
+- [x] Fix mobile overflow and compressed controls on the existing Trading and Futures workspaces by replacing desktop-only grid tracks with explicit responsive stacks.
+- [x] Fix mobile overlap in Wallet, Earn, and Portfolio summary, action, and data-table sections while preserving their existing desktop layouts.
+- [x] Verify the final reusable terminal chart, Trading, and Futures implementations and document their deterministic data-state and responsive-stack behavior.
+- [x] Provide compact mobile representations or controlled horizontal scrolling for dense market, order-book, transaction, and portfolio tables.
+- [x] Audit the shipped tab-like control surfaces with the semantic token system, then verify active, hover, keyboard-focus, and intentional unavailable-panel states.
+- [x] Audit and improve shared loading, success, warning, error, empty, and unavailable feedback states across the current UI components before final visual QA.
+- [x] Refine the existing Notifications, Orders, Deposit, Withdraw, Support, and KYC pages with the shared terminal card, semantic-status, and responsive layout system.
+- [x] Replace the incompatible legacy Dashboard and Alerts visual shells with Version 1.1 terminal views while preserving their current analytic and alert intent.
+- [x] Audit remaining legacy routes, including Watchlist, Binance Import, Portfolio Premium, and Admin, then align any visible non-terminal surfaces before final release QA.
+- [x] Replace the legacy Watchlist red/black shell with the terminal system and remove misleading randomly generated preview pricing from add-asset behavior.
+- [x] Refine the existing Binance Import connection workflow with the terminal system, clear read-only-key guidance, loading/error feedback, and responsive balance previews without changing its backend operations.
+- [x] Replace the Watchlist Premium duplicate sticky header and legacy table treatment with the shared terminal shell, compact mobile cards, and clearly labeled deterministic preview data.
+- [x] Directly verify the final Watchlist Premium source for the shared shell, deterministic-data disclosure, and responsive mobile card branch.
+- [x] Replace the Portfolio Premium duplicate sticky header and legacy dashboard with the shared terminal system, hideable illustrative values, mobile holdings cards, and non-misleading quick-action routes.
+- [x] Replace the Admin dashboard legacy shell with a role-aware terminal access state and remove fabricated user, transaction, and operational records until server-backed administration is configured.
+- [x] Replace the Legacy Home and not-found routes’ incompatible red/black treatments with concise shared-terminal navigation and accurate product-boundary messaging.
+- [x] Add clear deterministic-preview or unavailable-data disclosures to Exchange Home, Markets, Earn, Wallet, Notifications, Orders, Profile, and Security where static data could otherwise imply live or account-backed information.
+- [x] Harden Deposit and Withdraw preview safety by removing any actionable-looking destination/address semantics, disabling real-transfer implication, and retaining explicit non-submission feedback.
+- [x] Normalize technical-analysis inputs and empty/flat-series behavior, then repair and extend the deterministic indicator tests.
+- [x] Replace broad global transition utility rules with constrained transform/opacity motion to preserve reduced-motion and rendering performance safeguards.
+- [x] Restrict remaining shared card, button, and input transition properties to composited transform/opacity motion while preserving visible focus feedback.
+- [x] Add explicit reference-data and unavailable-account boundaries to the Trading and Futures tickets, depth, tape, positions, and leverage labels without changing their preview interactions.
+- [x] Replace the Orders desktop’s wrapped local-row action with an accessible compact control while retaining the existing local-removal behavior.
+- [x] Add accurate browser-local and unavailable-service boundaries to Settings without disrupting the functional global theme control.
+- [x] Verify every reachable routed page and shared surface for terminal typography, semantic colors, focus treatment, and remaining legacy presentation before final sign-off.
+- [x] Run and document tablet-width visual QA across public, market, terminal, account, workflow, premium, and protected routes.
+- [x] Perform a direct semantic-color and focus-state contrast audit before closing accessibility requirements.
+- [x] Verify page-level tabs for active, hover, keyboard-focus, and intentional unavailable-panel behavior.
+- [x] Document the current loading, success, warning, error, empty, and unavailable feedback coverage across shared primitives and key flows.
+- [x] Complete a final full-route layout-regression and performance review after the motion cleanup.
+- [x] Move the Markets reference ledger to its existing compact card presentation through tablet widths so all columns remain readable without clipping.
+- [x] Move the Orders reference ledger to its existing compact card representation through tablet widths so the local-action control remains immediately visible.
+- [x] Replace Wallet’s unavailable but scannable-looking QR graphic with a non-actionable unavailable-state illustration that matches its custody-preview boundary.
+- [x] Split route modules behind a shared terminal loading boundary so the production client bundle no longer ships every reachable page in its initial chunk.
+- [x] Split the remaining shared React, chart, motion, and UI vendor modules into deterministic production chunks to remove the residual oversized-entry warning.
+- [x] Align the shared navigation’s authentication affordance with routed workspace sessions so a signed-in user is never simultaneously offered sign-in and sign-out.
+- [x] Assess live-data provider options, verify their current API constraints, and document the selected production-safe integration architecture for Version 1.2.
+- [x] Securely configure the selected dedicated market-data provider key and verify a read-only health check before it is used by the live-data adapter.
+- [x] Build a server-side market-data adapter with normalized quote, market-statistics, candle, depth, trade, and timestamp contracts plus bounded caching and provider-safe batching.
+- [x] Surface normalized live quote, candle, order-book depth, and recent-trade contracts through the unified adapter by reusing the existing public exchange-feed service where appropriate.
+- [x] Add focused tests and route-level smoke checks for quote, candle, depth, trade, cache, and stale-response behavior before certifying the full adapter contract.
+- [x] Exercise each individual quote, candle, order-book, and recent-trades procedure through the live application server and record the contract evidence.
+- [x] Extend deterministic cache-stale tests beyond quotes to candles, depth, and trades before closing adapter verification.
+- [x] Add a read-only Coinbase Exchange fallback for quote, candle, depth, and recent-trade context when the primary exchange reports a regional availability restriction.
+- [x] Preserve source and timestamp metadata through the normalized exchange contracts, then verify primary and fallback mappings plus live fallback smoke behavior.
+- [x] Preserve upstream timestamp metadata in normalized exchange contracts, using a fetched-at fallback only when an upstream source supplies no event time.
+- [x] Add focused source-and-timestamp assertions for primary and fallback quote, candle, depth, and trade mappings, plus a live timestamp smoke check.
+- [x] Prevent non-finite live market statistics from reaching the client by normalizing exchange quote-volume fallbacks and adding regression coverage.
+- [x] Add typed tRPC procedures and focused unit coverage for resilient live-market queries, including rate-limit, retryable-error, stale-data, and offline states.
+- [x] Add caller-level tests for protected simulation order confirmation, including authenticated user scoping, invalid-order rejection, and unauthenticated rejection without production data writes.
+- [x] Correct the simulation-router unauthenticated test fixture so it passes an explicit no-user context rather than the default authenticated fixture.
+- [x] Convert the Markets directory to live data with search, sortable/filterable columns, accessible pagination or virtualization, loading skeletons, and timestamped update state.
+- [x] Verify the live Markets loading skeleton transitions to rendered provider rows, summaries, asset links, and pagination after the first provider response settles.
+- [x] Add a dedicated live asset-detail route with chart, high/low, volume, market capitalization, supply, recent movement, and accessible navigation from market listings.
+- [x] Verify the registered plural asset route and directory link target; the singular-path fallback observed during QA was expected, while `/assets/:id` renders the settled provider-backed asset workspace.
+- [x] Connect the existing Trading workspace to live quote, candle, depth, and recent-trade data while retaining a clearly labeled simulation-only buy/sell order-preview and confirmation flow.
+- [x] Replace the static Trading chart, quote, depth, and tape panels with the unified live exchange context while showing source, freshness, loading, stale, offline, and error states.
+- [x] Replace the remaining static Trading chart caption with an accurate live-candle provenance label.
+- [x] Add client-side simulation order validation and an explicit confirmation step that can only create a local or server-backed simulated transaction.
+- [x] Extend the portfolio simulation data model and workflows for balances, live valuation, unrealized P/L, allocation, and durable simulated transaction history without submitting real trades.
+- [x] Replace the legacy Portfolio holdings surface with the authenticated simulation ledger, including virtual cash, live valuation, P/L, allocation, source freshness, and immutable virtual transaction history.
+- [x] Verify end to end that confirming a simulation order creates a durable virtual transaction, updates virtual cash and positions, and appears in the protected Portfolio workspace.
+- [x] Defer desktop and mobile QA on a populated personal Portfolio because the required authenticated session is unavailable; retain deterministic populated-state coverage and do not seed shared user data.
+- [x] Defer browser-level simulated buy/sell QA because the user reported unavailable sign-in; verify the protected flow through tRPC, persistence, and rendered-component tests instead.
+- [x] Record the unavailable user sign-in as the reason populated personal-ledger browser QA is deferred, without attempting to create virtual records outside an authenticated session.
+- [x] Add server-rendered populated Portfolio coverage for positions, allocation, P/L, immutable history, stale valuation, and unavailable-price disclosures without mutating a user ledger.
+- [x] Adapt the populated Portfolio component test to the repository’s configured `.test.ts` discovery convention and verify it runs explicitly.
+- [x] Add the explicit React runtime binding required for server-rendered Portfolio test coverage under the project’s JSX transform.
+- [x] Verify and document the live valuation refresh path for existing simulated positions, including stale and unavailable public-quote handling.
+- [x] Add deterministic revaluation coverage showing an existing simulated position updates its live value and P/L from a newer server-side quote while retaining immutable history.
+- [x] Document the verified live valuation refresh behavior, including fresh-quote revaluation, stale fallback, and unavailable-quote disclosure, in the Version 1.2 audit record.
+- [x] Define and migrate the authenticated simulation-portfolio and simulation-transaction schema before wiring order confirmation to durable server state.
+- [x] Align the simulation-ledger schema and migration artifact with TiDB’s supported constraint set, then verify all additive tables and unique indexes are present.
+- [x] Add client-aware refresh, retry, offline, stale-data, and rate-limit protection that avoids unsafe server-side timers and preserves responsive performance.
+- [x] Extract and unit-test the shared live-refresh policy for online, offline, visible, hidden-tab, retry-backoff, and bounded-query decisions.
+- [x] Preserve and verify lazy loading, bundle boundaries, memoized dense-data views, keyboard navigation, screen-reader semantics, focus management, and AA contrast under live update conditions.
+- [x] Run TypeScript validation, focused unit tests, responsive and runtime QA, performance/build verification, then document Version 1.2 limitations and the Version 1.3 roadmap.
+- [x] Save the completed Version 1.2 checkpoint after every tracker item and release document is accurate.
+- [x] Implement and test client-side `RATE_LIMITED` handling that honors server retry metadata and exposes a bounded retry/status state.
+- [x] Create and test a shared client-side rate-limit policy and accessible notice, then apply it to Markets, Asset Detail, and Trading refresh controls.
+- [x] Add the explicit React runtime binding required by the shared rate-limit notice under the repository’s JSX test transform.
+- [x] Document live-surface memoization, keyboard navigation, screen-reader semantics, focus management, and contrast verification for Markets, Asset Detail, Trading, and Portfolio.
+- [x] Calculate and record WCAG contrast ratios for the live-surface text, primary, success, danger, and warning token pairs on their intended Nexus surfaces.
+- [x] Gate the Markets, Asset Detail, and Trading manual refresh controls while a provider-directed rate-limit window is active, and cover the paused-control behavior in tests.
+- [x] Publish a Version 1.2 release note with remaining limitations and a concrete Version 1.3 roadmap.
+- [x] Create a Version 1.2 hardening audit register covering routes, live-data contracts, simulation flows, auth, security, accessibility, responsive behavior, performance, errors, and unfinished/placeholder surfaces.
+- [x] Audit every registered route and action for reproducible failures, incorrect boundaries, silent errors, fake-live-data implication, and non-functional controls.
+- [x] Verify the Admin route’s verified-session message is guarded by authentication and the `admin` role; no hardcoded access implication was found.
+- [x] Audit CoinGecko and public-exchange contracts for price, change, volume, capitalization, supply, metadata, timestamps, pagination, rate-limit, stale, unavailable, and error-state correctness.
+- [x] Prevent expected regional primary-exchange fallback failures from emitting misleading runtime error logs while retaining unexpected provider failure diagnostics.
+- [x] Preserve and expose CoinGecko timestamp provenance so a fetched-at fallback is never presented as a provider update when upstream metadata is missing.
+- [x] Audit protected simulation trading and portfolio paths for validation, confirmation, authorization, balance/position/P&L calculations, transaction history, and explicit simulation-only messaging.
+- [x] Reject new simulation-order confirmations when the only available live quote is stale or unavailable, while continuing to disclose stale valuation for existing positions.
+- [x] Audit authentication and session boundaries for protected-route behavior, login/logout state, session absence/expiration handling, and sensitive-data exposure.
+- [x] Audit application source and runtime configuration for exposed secrets, unsafe inputs, insecure storage, excessive permissions, and real-money-trading paths.
+- [x] Verify desktop, tablet, and mobile route behavior, then fix reproducible overflow, touch-target, navigation, chart, and layout regressions.
+- [x] Verify the compact Markets card presentation below the desktop breakpoint; an independent 390px Chromium capture confirmed the card branch with no reproducible clipping.
+- [x] Consolidate duplicate viewport metadata into one mobile-safe declaration and verify responsive behavior remains unchanged.
+- [x] Verify keyboard navigation, focus management, labels, semantics, contrast, reduced motion, live-region status, and recovery actions on current live-data surfaces.
+- [x] Audit lazy routes, bundle output, caching, API request behavior, chart rendering, memoization, and unnecessary re-renders; fix measured regressions without adding unnecessary dependencies.
+- [x] Run the Version 1.2 hardening quality gate: TypeScript, lint or documented lint availability, automated tests, route/API smoke checks, simulation calculations, responsive QA, accessibility QA, security review, and production build.
+- [x] Bound the CoinGecko credential-health test with an explicit network timeout and actionable failure path so external slowness cannot exhaust the test-run timeout.
+- [x] Publish the Version 1.2 hardening audit report with discovered issues, fixes, intentional unavailability, validation results, blockers, and readiness decision for the AI Intelligence Layer.
+- [x] Save the final Version 1.2 hardening checkpoint only after all audit findings are resolved or explicitly documented.
+- [x] Audit Version 1.2 market-data, analysis, routing, caching, and UI seams; publish a modular Version 2.0 intelligence architecture before major UI work.
+- [x] Define shared evidence, freshness, timeframe, indicator, market-structure, regime, score, risk, and explanation contracts with explicit LIVE, STALE, UNAVAILABLE, and ERROR states.
+- [x] Preserve existing CoinGecko normalization and public-exchange fallback logic; add only reusable intelligence-specific data acquisition and deduplication boundaries.
+- [x] Implement deterministic SMA, EMA, RSI, MACD, Bollinger Bands, ATR, volume, momentum, and reliable support/resistance calculations with missing, invalid, flat, and short-series coverage.
+- [x] Implement market-structure evidence for higher highs/lows, lower highs/lows, trend, breakout, breakdown, consolidation, and momentum changes without predictive claims.
+- [x] Implement volatility, volume, and momentum analysis modules with transparent inputs, thresholds, and evidence outputs.
+- [x] Implement multi-timeframe analysis for available 5m, 15m, 1h, 4h, and 1D data; mark unsupported or insufficient frames unavailable rather than synthesizing data.
+- [x] Implement deterministic market-regime classification for bullish trend, bearish trend, range/consolidation, high volatility, low volatility, and unclear states.
+- [x] Implement explainable opportunity, risk, and signal-strength scores that expose positive, negative, unavailable, and confidence-limiting factors without profit probabilities.
+- [x] Implement the first Nexus explanation layer from structured evidence, explicitly describing what, why, supporting evidence, and risks without fabricated evidence, certainty, or profit language.
+- [x] Add typed, cached, deduplicated tRPC procedures for asset intelligence, market overview, and opportunity scanning with bounded inputs and provider-aware error states.
+- [x] Upgrade the existing dashboard into Nexus Market Overview using real regime, BTC trend, momentum, volatility, opportunities, risk, movement, and freshness outputs without redesigning the Nexus shell.
+- [x] Extend the existing Asset Detail route with trend, momentum, volatility, structure, multi-timeframe evidence, opportunity/risk scores, Nexus explanation, source, and update metadata.
+- [x] Build an Opportunity Scanner using only assets with sufficient real evidence, with market, timeframe, opportunity, risk, volume, and trend filters plus accessible sorting and empty states.
+- [x] Verify all Version 1.2 authentication, navigation, simulation, responsive, and design-system behavior remains unchanged and no real-money execution path is introduced.
+- [x] Optimize intelligence requests through shared caching, request deduplication, appropriate refresh intervals, memoized derivations, lazy routes, and bounded scanner concurrency.
+- [x] Add comprehensive deterministic tests for indicators, missing/stale/invalid data, structure, regimes, scores, multi-timeframe alignment, API failures, edge cases, and explanation safety.
+- [x] Run the Version 2.0 quality gate: TypeScript, documented lint availability, all Vitest tests, live API and route smoke checks, desktop/tablet/mobile QA, accessibility review, performance review, and production build.
+- [x] Publish the Version 2.0 implementation report covering modules, preserved foundation, sources, live analyses, unavailable features, tests, build, remaining issues, and the recommended Version 2.1 Risk Engine scope.
+- [x] Save the final Version 2.0 checkpoint only after every tracker item is complete or explicitly documented as an intentional data limitation.
+- [x] Audit Version 2.0 intelligence, simulation schema, protected routers, portfolio service, trading ticket, and current persistence seams; publish the Version 2.1 Risk Engine architecture before implementation.
+- [x] Define shared deterministic contracts for risk settings, stop methods, trade plans, position sizing, exposure, daily protection, safety checks, risk levels, decisions, monitoring, and audit records.
+- [x] Design and migrate protected per-user risk settings, safety state, pending paper orders if needed, position protection metadata, daily risk summaries, and immutable trade-decision audit records using TiDB-compatible additive schema changes.
+- [x] Implement safe default settings and bounded validation for risk per trade, daily loss, drawdown, open positions, exposure, stop method, reward/risk, cooldown, fees, and slippage assumptions.
+- [x] Implement deterministic risk-per-trade calculations using account equity, entry, stop, position size, fees, and slippage, with explicit planned-loss and non-guarantee disclosures.
+- [x] Implement deterministic position sizing with recommended quantity, notional, planned loss, risk percentage, and remaining virtual balance; never exceed the configured risk limit silently.
+- [x] Implement fixed-percentage, ATR-based, and market-structure stop engines with evidence, side-aware validation, and explicit unavailable states.
+- [x] Implement take-profit and reward/risk calculations with configurable minimum reward/risk and deterministic rejection below the configured threshold.
+- [x] Implement portfolio exposure calculations for total, per-asset, open-position count, long/short where supported, existing planned risk, and concentration limits.
+- [x] Resolve the Risk Engine exposure helper’s Set iteration with the project’s current TypeScript target before certifying the protection calculations.
+- [x] Implement daily-loss, daily-drawdown, consecutive-loss, and cooldown protection using UTC boundaries and immutable simulation history.
+- [x] Implement persistent per-user Emergency Stop activation/reset, pending simulated-order cancellation, preserved positions/history, trigger reason, and explicit safety status.
+- [x] Cancel all active pending paper orders atomically when Emergency Stop activates, retain them as CANCELLED audit records, and verify repeated activation creates no duplicate cancellation events.
+- [x] Add an in-memory persistence-boundary test for Emergency Stop activation, pending-order cancellation, audit-event writes, and idempotent repeated activation without production data.
+- [x] Correct the in-memory safety repository’s select-chain mock so unbounded pending-order queries resolve arrays and exercise the real cancellation path.
+- [x] Add the pending-order identifier to immutable risk events and migrate it additively so Emergency Stop cancellations retain a direct auditable linkage.
+- [x] Implement an explainable LOW/MODERATE/HIGH/EXTREME risk level based only on measurable Intelligence and Risk Engine inputs.
+- [x] Implement the complete Trade Safety Gate for freshness, entry, stop, size, risk, exposure, daily loss, drawdown, regime, cooldown, and Emergency Stop; block on every critical failure with exact reasons.
+- [x] Integrate the Safety Gate into protected paper-order confirmation so accepted and rejected decisions are both persisted before any virtual ledger mutation, with no real-exchange path.
+- [x] Build a server-side guarded paper-order path that loads stored risk state, creates immutable accepted or rejected decision evidence before ledger writes, and links an accepted decision to its transaction.
+- [x] Align the risk-plan daily-protection adapter with stored UTC field names before using it in protected paper-trade confirmation.
+- [x] Extend paper positions with stop, target, planned risk, risk level, intelligence score, regime, and source/freshness metadata required for monitoring and auditability.
+- [x] Implement on-demand position monitoring for current price, unrealized P/L, stop/target distance, current risk, regime changes, and safety conditions without unsafe background scheduling.
+- [x] Superseded by user choice A: do not upgrade to always-on hosting or add its recurring cost.
+- [x] Superseded by user choice A: do not implement a 24/7 background worker; use session-scoped deterministic monitoring only.
+- [x] Superseded by user choice A: automatic protection evaluations run only during an active session and remain idempotent/auditable.
+- [x] Superseded by user choice A: persistent-worker restart/concurrency verification is not applicable to the selected architecture.
+- [x] Implement session-scoped monitoring at page entry and explicit refresh only; this intentional no-interval design avoids hidden-tab/background evaluation and is documented as the user-selected no-always-on limitation.
+- [x] Add protected typed tRPC procedures for risk settings, safety status, trade-plan preview, guarded confirmation, Emergency Stop/reset, position monitoring, and paginated audit history.
+- [x] Build the Risk Settings panel with safe defaults, validation, dangerous-configuration prevention, saved-state feedback, and prominent paper-trading boundaries.
+- [x] Upgrade Trading with transparent risk calculation, stop method, target/reward-risk preview, Safety Gate results, accepted/blocked states, and no real-order semantics.
+- [x] Extend Portfolio with exposure, open-risk, daily protection, Emergency Stop status, monitored position protection, and links to immutable audit history.
+- [x] Build an auditable trade-log view for accepted and rejected paper trades with timestamp, plan, scores, regime, freshness, decision, and exact reasons.
+- [x] Verify Version 1.2 and 2.0 authentication, navigation, live data, intelligence, scanner, market overview, simulation, and responsive behavior remain intact through the TypeScript, full Vitest, and production-build gate.
+- [x] Add deterministic unit, service, persistence-boundary, router, and rendered-state tests for Version 2.1 calculations, stale/missing data, Emergency Stop, Safety Gate rejection, guarded paper-trade persistence, and session monitoring.
+- [x] Run the Version 2.1 quality gate: TypeScript, full Vitest, production build, static route captures, protected-contract coverage, and inherited security/accessibility/performance boundaries; authenticated populated-browser checks remain explicitly deferred without seeded user data.
+- [x] Publish the Version 2.1 final report covering architecture, calculations, safety rules, sizing, stops, exposure, Emergency Stop, audit log, paper-trading integration, validation results, limitations, and the Version 2.2 Strategy Lab scope.
+- [x] Save the final Version 2.1 checkpoint after every tracker item is complete or explicitly documented as an intentional simulation limitation.
+- [x] Audit Version 2.1 risk contracts, simulation ledger, historical-candle providers, and database seams; document the Version 2.2 Strategy Lab architecture and reproducibility boundary.
+- [x] Design and migrate TiDB-compatible per-user strategy, strategy revision, backtest run, backtest trade, equity-point, and audit-record persistence with future entitlement identifiers but no billing implementation.
+- [x] Implement validated strategy create, edit, duplicate, save, revision, archive, and list behavior with no fake strategies or shared seeded records.
+- [x] Implement deterministic historical data selection with explicit provider, interval, end-exclusive UTC range, dataset schema version/fingerprint, chronology checks, and insufficient-data rejection.
+- [x] Implement configurable rule-based entry, exit, sizing, stop, target, fees, and slippage parameters, with invalid and unrealistic configurations rejected server-side.
+- [x] Build a reproducible historical backtest engine that routes every simulated entry through Version 2.1 position sizing, stops, reward-risk, exposure, daily protection, risk level, and trade gate without a second risk engine.
+- [x] Persist immutable backtest inputs, timestamps, dataset metadata, run status, trade decisions, stop/target observations, equity curve points, risk metrics, and audit evidence.
+- [x] Add protected tRPC procedures for strategy management, launch/read backtests, paginated results/trades, and entitlement-ready feature boundaries; retain no external-execution path.
+- [x] Build Nexus Strategy Lab, strategy editor, backtest configuration, run result, equity curve, trade ledger, and unavailable-data UI states with responsive accessible interactions.
+- [x] Add deterministic unit, engine, persistence-boundary, router, and rendered-state tests for reproducibility, risk enforcement, invalid input, missing/short data, costs, stops, drawdown, and Version 2.1 regression coverage.
+- [x] Run Version 2.2 TypeScript, full Vitest, production build, desktop/tablet/mobile QA, security/accessibility review, and document exact Version 2.3 blockers.
+- [x] Publish the Version 2.2 release report and save a checkpoint only after all items are complete or explicitly documented as intentional simulation limitations.
+- [x] Audit Strategy Lab 2.2 data, persistence, risk, audit, entitlement, and UI seams; document the Version 2.3 CSV, comparison, parameter-search, and anti-overfitting architecture.
+- [x] Design and migrate TiDB-compatible user-scoped CSV-import, dataset-validation, run-comparison, parameter-search, candidate-result, robustness-analysis, and audit persistence without payment tables.
+- [x] Implement validated CSV OHLCV parsing with explicit supported schema, UTC timestamps, positive OHLC relationships, finite non-negative volume, duplicates, interval gaps, invalid-row diagnostics, dataset fingerprinting, and unverified-source labeling.
+- [x] Persist only verified imported datasets with source, symbol, timeframe, UTC range, row count, import timestamp, validation state, fingerprint, and immutable candle evidence; reject unsupported or insufficient files without fabricating candles.
+- [x] Implement deterministic backtest-run comparison for revision, dataset, date range, interval, parameters, capital, costs, return, P/L, win rate, drawdown, exposure, trade count, average trade, and supported risk-adjusted metrics.
+- [x] Implement bounded parameter-search plans and deterministic candidates that preserve strategy revision and dataset fingerprints, cap combinations and execution work, route every candidate through Risk Engine 2.1, and record each candidate outcome.
+- [x] Implement training, validation, and optional out-of-sample separation with chronological boundaries, sample-size warnings, sensitivity/stability analysis, and explicit anti-overfitting limitations rather than profit-maximization claims.
+- [x] Extend feature entitlement declarations for basic market analysis, advanced backtesting, parameter search, and advanced strategy analysis without enabling payment or locking users by default.
+- [x] Add protected tRPC procedures for CSV validation/import, dataset selection, comparison, parameter-search launch/read, and audit history with per-user ownership verification and no external execution path.
+- [x] Build responsive accessible Nexus pages or panels for CSV validation results, verified-dataset status, run comparison, controlled search, training/validation labeling, robustness warnings, and unavailable historical-order-book state.
+- [x] Add deterministic unit, persistence-boundary, router, and rendered-state tests for CSV validation, fingerprints, duplicates, OHLC errors, gaps, comparisons, caps, reproducibility, period separation, risk enforcement, entitlements, and Version 2.1/2.2 regression coverage.
+- [x] Run Version 2.3 TypeScript, documented lint availability, full Vitest, production build, desktop/tablet/mobile QA, accessibility/security review; publish a release report with exact data limitations and Version 2.4 recommendations, then checkpoint.
+- [x] Audit the Version 2.3 CSV-import persistence and document a source-authentication trust model that differentiates structural verification, cryptographic authenticity, trusted publisher status, and rejection.
+- [x] Design and migrate user-scoped trusted publisher keys, immutable CSV authentication attestations, key revocation state, and audit evidence without altering existing historical datasets destructively.
+- [x] Implement canonical CSV hashing, detached Ed25519 signature verification, signed manifest validation, key fingerprint matching, expiry/revocation checks, and explicit untrusted/invalid/verified states without treating source labels as proof.
+- [x] Preserve the existing structural validator, reject mismatched or malformed authentication material before dataset creation, and retain failed authentication diagnostics without fabricating data or trust.
+- [x] Add protected APIs to register, revoke, and list trusted public keys; preview CSV authentication; and import signed data with per-user ownership and immutable audit evidence.
+- [x] Extend the Nexus research workspace with trusted-publisher key management, signed-manifest inputs, clear verification evidence, status badges, and accessible rejection states.
+- [x] Add deterministic tests for canonical hashes, valid and invalid signatures, wrong keys, expired/revoked keys, manifest mismatch, user isolation, persistence boundaries, and Version 2.3 regression behavior.
+- [x] Run TypeScript, the complete Vitest suite, production build, responsive/accessibility QA, and publish a source-authentication release report before checkpointing.
+- [x] Audit all current Nexus chart components, live/historical OHLCV contracts, Intelligence contracts, Risk Engine plan evidence, and Strategy Lab dataset contracts; document the Candlestick Chart architecture and data-quality boundaries.
+- [x] Build a reusable Nexus candlestick renderer that draws only supplied OHLCV candles with premium semantic up/down/wick colors, price/time scales, responsive viewport sizing, and accessible unavailable states.
+- [x] Add deterministic zoom, pan, crosshair, pointer/keyboard candle selection, and precise OHLCV tooltip behavior without inventing gaps, interpolated candles, or client-side prices.
+- [x] Add a user-toggleable Intelligence overlay using only existing indicator, structure, regime, risk, and freshness evidence; constrain labels to avoid obscuring candles and disclose unavailable evidence.
+- [x] Surface applicable Risk Engine stop/target/entry plan evidence and Strategy Lab historical-run context as optional chart annotations, each labeled as simulation/research evidence with no execution behavior.
+- [x] Integrate the reusable chart into live Trading, Asset Detail, and Strategy Lab historical results while preserving current pages, data provenance, lazy loading, and paper-only boundaries.
+- [x] Add deterministic component, interaction, data-integrity, Intelligence-toggle, risk/strategy annotation, router, and rendered-state tests; cover missing, stale, invalid, sparse, and selected-candle states.
+- [x] Run TypeScript, complete Vitest, production build, desktop/tablet/mobile visual QA, accessibility and performance review; publish a Candlestick Chart release report and checkpoint.
+- [x] Audit the existing candlestick, protected dataset, live-candle, indicator, Intelligence, Risk Engine, and Strategy Lab seams; document the progressive-history, deterministic-indicator, and selected-evidence architecture.
+- [x] Implement protected cursor/time-range pagination for persisted historical OHLCV with fixed page limits, strict chronological continuity, duplicate detection, explicit gaps, and no in-browser full-dataset load.
+- [x] Implement a client-side progressive historical-candle controller that requests adjacent pages only when pan/zoom reaches a loaded boundary, deduplicates by verified timestamps, preserves explicit gaps, and retains provenance.
+- [x] Implement deterministic configurable SMA and ATR calculations directly from the chart’s loaded OHLCV sequence, with explicit unavailable values before sufficient lookback and no source-data mutation.
+- [x] Add independently toggleable Nexus SMA and ATR layers with period controls, non-obstructive ATR panel, selected-period disclosure, and responsive keyboard-accessible controls.
+- [x] Add a selected-candle evidence panel for timestamp, OHLCV, direction, body, upper/lower wicks, enabled SMA/ATR values, and only deterministic pattern classifications supported by observable candle data.
+- [x] Preserve optional Intelligence, risk-plan, and historical-strategy annotations as traceable layers; distinguish evidence from interpretation and historical data from live data without external execution semantics.
+- [x] Integrate progressive history and indicator controls into Trading, Asset Detail, and Strategy Lab historical results without breaking current live-data, paper-only, audit, and protected-dataset paths.
+- [x] Add deterministic tests for pagination boundaries, duplicate/missing candles, progressive merging, SMA, ATR, selected-evidence values, unavailable states, overlays, responsive rendered states, and 2.1–2.4 regression coverage.
+- [x] Run TypeScript, complete Vitest, production build, desktop/tablet/mobile QA, accessibility/performance review; publish an implementation report mapping every attached-file requirement before checkpointing.
+- [x] Audit documented and implemented historical UTC-range capabilities for the configured Binance primary and Coinbase fallback providers, and document live-history boundaries, limits, source semantics, and unsupported cases.
+- [x] Implement a validated live-history page contract with UTC start/end, bounded limits, provider source, request range, chronology validation, duplicate detection, missing-interval evidence, partial/unavailable states, and cache provenance.
+- [x] Implement bounded, provider-aware caching and request deduplication for live historical pages, ensuring cache keys include symbol, interval, range, and provider outcome without stale-window substitution.
+- [x] Reuse the progressive candle merger for live pages, rejecting conflicting overlaps and exposing explicit gaps or provider-unavailable history without interpolation or reconstructed candles.
+- [x] Connect Trading and Asset Detail charts to request older/newer provider pages at pan/zoom boundaries only when the active provider supports the explicit range; preserve live quote, Intelligence, Risk Engine, and paper-only flows.
+- [x] Add deterministic tests for provider range boundaries, overlapping and duplicate pages, chronological ordering, missing intervals, partial/failed provider results, fallback source behavior, and cache consistency.
+- [x] Run TypeScript, the full Vitest suite, production build, desktop/tablet/mobile QA, and publish a live-history implementation report with detected provider capabilities and exact limitations before checkpointing.
+- [x] Audit live-history page evidence and progressive chart state; document coverage timelines, confirmed boundary semantics, saved-range clamping, and the distinction between provider coverage, gaps, temporary failures, and invalid ranges.
+- [x] Design and migrate a minimal user-scoped chart-view preference for asset, interval, and non-sensitive requested range/viewport metadata, with unique ownership and no storage of market candles.
+- [x] Implement provider-coverage aggregation from actual live-history responses, including earliest/latest verified timestamps, requested-range coverage, explicit gaps, confirmed earliest/latest boundaries, and source identity without source mixing.
+- [x] Implement protected get/save chart-view preference APIs and deterministic clamping of a restored range to verified coverage, with an explicit adjustment reason and no interference with progressive loading.
+- [x] Add a lightweight Nexus Provider Coverage Timeline that renders only actual loaded/verified coverage, unavailable periods, gaps, active source, and page/request status.
+- [x] Add non-intrusive actionable boundary alerts only after a provider EMPTY response; distinguish provider boundary, temporary request failure, verified gap, and invalid/unavailable range without promoting non-extending pages to a boundary.
+- [x] Integrate saved view, coverage, and boundary status into ProgressiveLiveCandles, Trading, and Asset Detail while preserving existing Intelligence, Risk Engine, Strategy Lab, audit, and paper-only behaviors.
+- [x] Add deterministic tests for coverage boundaries, gaps, saved-range restoration/clamping, provider empty versus temporary failure, cache/provider isolation, protected preference ownership, and rendered responsive states.
+- [x] Run TypeScript, full Vitest, production build, desktop/tablet/mobile QA, and publish an implementation report mapping every attached-file requirement before checkpointing.
+- [x] Audit the current provider coverage timeline, saved chart-view preference, progressive live candle pages, and gap evidence; document preset/custom range rules and a verified-gap export contract.
+- [x] Implement deterministic preset and custom UTC range resolution against currently verified coverage, with explicit unsupported, clamp, and no-interpolation outcomes plus source-aware page limits.
+- [x] Implement a verified provider-gap report model that includes only actual chronology gaps, source, asset, interval, requested and verified coverage, expected interval, duration, and deterministically calculable missing-candle count.
+- [x] Implement deterministic JSON and RFC 4180-safe CSV gap-report serialization with explicit validation status and no temporary failure or provider boundary misclassified as a gap.
+- [x] Add a dedicated accessible Candlestick Chart time-range selector for 1D, 7D, 30D, 90D, 6M, 1Y and custom UTC ranges, with disabled/adjusted states based on verified coverage and saving through the existing preference path.
+- [x] Add inspect and export controls for the current verified gap report, exposing JSON and CSV only from the active provider/source, symbol, interval, requested range, and loaded verified evidence.
+- [x] Integrate range selection, progressive loading, saved viewport restoration, coverage timeline, boundary alerts, and gap exports into Trading and Asset Detail without breaking Intelligence, Risk Engine, Strategy Lab, audit, or paper-only behavior.
+- [x] Add deterministic tests for presets, custom ranges, coverage clamping, saved restoration, verified gaps, temporary failure versus boundary, JSON/CSV serialization, provider isolation, and rendered responsive controls.
+- [x] Run TypeScript, full Vitest, production build, desktop/tablet/mobile QA, and publish a full implementation report with formats and provider limitations before checkpointing.
+- [x] Review every requirement in Pasted_content_07.txt against Nexus architecture, document conflicts or implementation decisions, and expand the approved specification into code-verifiable delivery items.
+- [x] Audit every existing route and real feature, map it to a working navigation destination and section, and document gaps without creating placeholder navigation.
+- [x] Design a dedicated Nexus Candlestick Workspace that reuses ProgressiveLiveCandles, verified provider data, indicators, coverage, gaps, saved ranges, and Risk/Intelligence evidence with no duplicate market-data pipeline.
+- [x] Build the workspace route and asset/timeframe controls using only validated existing live-market contracts, with unavailable states for unsupported data and no invented symbols or candles.
+- [x] Reorganize responsive navigation into logical capability sections with consistent Lucide icons, labels, tooltips, active states, and working destinations across desktop, laptop, tablet, and mobile.
+- [x] Implement a maintainable English/Arabic localization system with language persistence, dynamic English LTR/Arabic RTL direction, Arabic typography, financial-number handling, and translated shared navigation, chart workspace, chart data states, and the actual Settings language control; specialized legacy-page copy remains explicitly documented for staged translation.
+- [x] Apply RTL-aware directional layout and semantic icon mirroring where appropriate, while preserving chronological chart interaction, symbols, prices, and UTC information.
+- [x] Audit and standardize shared Nexus navigation, chart workspace, financial directionality, controls, chart toolbars, focus states, touch targets, and icon-only aria/tooltip semantics without changing feature meaning.
+- [x] Add automated localization, navigation, workspace, accessibility, and responsive-rendered-state coverage, ensuring existing market, risk, strategy, backtesting, audit, and paper-only contracts remain intact.
+- [x] Run TypeScript, full Vitest, production build, route/navigation validation, English LTR and Arabic RTL desktop/tablet/mobile QA; publish a report mapping every specification requirement before checkpointing.
+- [x] Audit every user-facing text, dynamic state, form control, table, metric, chart annotation, and financial-direction boundary in Risk Settings, Audit Log, Strategy Lab, and Strategy Research before Arabic localization.
+- [x] Add precise English/Arabic translation keys and localized page copy for the Risk Engine, audit, Strategy Lab, backtests, CSV research, source-authentication, validation, unavailable, and error states without translating or modifying financial values.
+- [x] Localize Risk Settings and Audit Log with RTL-aware headings, controls, validation, Emergency Stop, decisions, reasons, and financial/table cells kept in LTR where required.
+- [x] Localize Strategy Lab and Strategy Research with RTL-aware editors, backtest configuration, dataset metadata, evidence, results, tables, charts, CSV/source-authentication, and research warnings while retaining English technical acronyms where clearer.
+- [x] Add page-specific RTL styling for labels, directional layouts, icon placement, toggles, tables, charts, and status badges without changing chronological data, OHLCV, symbols, prices, UTC, or deterministic results.
+- [x] Add rendered-state tests in English and Arabic for management and strategy pages, then run TypeScript, full Vitest, production build, and desktop/tablet/mobile RTL QA before checkpointing.
+- [x] Inventory every registered Nexus route, visible navigation entry, control surface, and implemented capability; document its intended destination, underlying service, data boundary, and test state.
+- [x] Audit functional flows for market data, chart controls, historical pagination, provider coverage/gaps/export, risk planning, paper order confirmation, monitoring, strategy/backtest, CSV/source trust, audit, settings, and language.
+- [x] Identify and fix each real broken, misrouted, non-functional, inaccessible, misleading, or missing-state UI element by reusing existing routes, tRPC procedures, services, and components; document genuinely unavailable functionality instead of fabricating it.
+- [x] Persist actual browser-local display and notification preferences in Settings, and convert unavailable API/security administration rows into explicit non-interactive unavailable states.
+- [x] Add a discovered Settings rendered-state test for browser-local persistence messaging and non-interactive unavailable API/security controls.
+- [x] Fix the audited React render-cycle warning between CandlestickChart viewport notifications and ProgressiveLiveCandles state updates, then add regression coverage without changing candle data or pagination behavior.
+- [x] Ensure every implemented Nexus capability has an accessible, logical UI entry point with consistent icon, label, active state, keyboard access, and tooltip where icon-only.
+- [x] Audit and improve desktop, laptop, iPad portrait/landscape, mobile, English LTR, and Arabic RTL functional access without changing verified data, provider isolation, deterministic calculations, or paper-only execution.
+- [x] Add regression tests for important corrected paths and run TypeScript, full Vitest, production build, major-route smoke coverage, responsive captures, and language checks before publishing a quantified audit report and checkpoint.
+- [x] Replace the unhandled Futures reference-pair control with an explicit unavailable-boundary response, and clarify that reference-position close controls cannot execute or alter a ledger.
+- [x] Make TerminalChart’s expand control functional and replace its unimplemented indicator control with a non-interactive unavailable state, preserving its clearly labelled reference-data boundary.
+- [x] Audit current live-market refresh, active-candle, ProgressiveLiveCandles, CandlestickChart, and Intelligence update paths against verified-provider, chronology, provider-isolation, and viewport-stability requirements.
+- [x] Design a provider-verified incremental active-candle update contract that preserves finalized historical candles, rejects invalid updates, and never interpolates or fabricates ticks.
+- [x] Implement a throttled, referentially stable live update flow that updates only the active candle and necessary deterministic analysis while preserving pan, zoom, crosshair, selected evidence, indicators, and saved viewport state.
+- [x] Add explicit probabilistic analytical wording and live-update/freshness provenance to the Intelligence layer without connecting it to any execution path.
+- [x] Add regression tests for live OHLCV merges, malformed and cross-provider updates, chart viewport preservation, update batching, analytical wording, and minimized render work.
+- [x] Run live-flow browser checks, desktop/mobile/iPad QA, TypeScript, the complete Vitest suite, production build, and publish the live-chart implementation report before checkpointing.
+- [x] Validate the complete short provider candle window for duplicate or unordered timestamps before accepting its active tail, and cover the rejection path with a service test.
+- [x] Audit all existing two-option controls and related Nexus tokens to select real functional integrations without replacing valid multi-option tabs or duplicating toggle logic.
+- [x] Build a reusable Nexus segmented two-option control with an animated directional marker, semantic color tokens, keyboard/touch/disabled states, reduced-motion behavior, and LTR/RTL support.
+- [x] Replace suitable existing functional binary controls with the shared marker component while preserving each page’s actual state transition and paper-only boundaries.
+- [x] Add component and integration regression tests for selection, keyboard behavior, disabled state, RTL marker direction, and real callback wiring.
+- [x] Run responsive desktop/mobile/iPad QA, TypeScript, complete Vitest, production build, and publish the toggle-marker implementation report before checkpointing.
+- [x] Audit the approved premium redesign specification against every current route, shared component, visual token, navigation item, and real capability; document design decisions and conflicts without changing verified functionality.
+- [x] Define a future-proof Nexus information architecture, desktop sidebar/collapsed navigation, laptop/tablet adaptation, and mobile drawer/bottom-action behavior using only real routes and features.
+- [x] Establish a coherent Nexus visual system for surfaces, typography, gradients, borders, shadows, icons, motion, states, and a scalable logo/mark without introducing conflicting colors or excessive effects.
+- [x] Build the shared responsive application shell, navigation primitives, brand mark, command shortcuts, and contextual action patterns with accessible LTR/RTL support.
+- [x] Redesign the Dashboard as a real-data command center and unify Markets, Trading, Asset Detail, Chart Workspace, Intelligence, Historical Data, and Provider Validation around verified existing contracts.
+- [x] Redesign Strategy Lab, Backtesting, Strategy Research, Risk Engine, Audit, Monitoring, Portfolio, settings, and account surfaces while preserving all paper-only, ownership, validation, and unavailable-state boundaries.
+- [x] Standardize English/Arabic terminology, hierarchy, labels, tooltips, empty/loading/error states, and responsive behavior across the product without fabricating localization or capability.
+- [x] Add or update reusable component, rendered-state, navigation, accessibility, and regression tests; verify all major routes on mobile, iPad, laptop, desktop, English LTR, and Arabic RTL.
+- [x] Run TypeScript, complete Vitest, production build, visual/runtime QA, publish the redesign report, verify the full task tracker, and checkpoint the finished redesign.
+- [x] Eliminate the initial mobile-sidebar desktop flash by initializing the viewport breakpoint from the browser window, then cover the responsive navigation state in tests.
+- [x] Audit the existing browser-local Settings preference model and the Dashboard, Markets, Trading, and Chart Workspace layout seams for a non-destructive density preference integration.
+- [x] Build a reusable density preference contract and accessible segmented selector for compact, comfortable, and spacious layouts, with local persistence and English/Arabic RTL labels.
+- [x] Connect the shared density setting to the real market command center, market directory, trading workspace, and candlestick workspace without altering data queries, charts, risk controls, or paper-only execution.
+- [x] Add persistence, selector, rendered-state, RTL, and density-class regression tests; then run responsive QA, TypeScript, full Vitest, production build, report, tracker review, and checkpoint.
+- [x] Add the shared density selector and density-aware container treatment to the standalone Chart Workspace, then rerun the affected validation and quality checks.
+- [x] Audit Version 2.4 requirements against current Market Intelligence, Risk Engine, Strategy Lab, backtesting, portfolio, notifications, entitlement, evidence, and paper-only execution contracts; document conflicts before implementation.
+- [x] Design grounded Copilot evidence, request classification, data minimization, deterministic fallback, auditing, deduplication, caching, rate-limit, and feature-entitlement contracts without a free-form fact source.
+- [x] Implement protected Copilot procedures that explain only structured application evidence, unavailable/stale boundaries, Risk Engine decisions, paper trades, positions, and backtests; never create or execute an exchange order.
+- [x] Design and migrate TiDB-safe user-scoped alert preferences, alert events, cooldown/deduplication state, Copilot evidence records, and briefing preferences with additive migrations and ownership checks.
+- [x] Implement explainable event-driven smart alerts from verified market, risk, and paper-position conditions, with severity, cooldown, deduplication, throttling, freshness, and no automatic trading.
+- [x] Implement explicit favorite/timeframe/risk/strategy/notification context plus an on-demand daily briefing that only summarizes available evidence and does not require background scheduling.
+- [x] Extend non-billing entitlement declarations for copilot_basic, copilot_advanced, smart_alerts, advanced_alerts, daily_briefing, portfolio_ai, and strategy_ai_analysis.
+- [x] Build responsive Nexus Copilot, alert center, evidence drawer, preferences, and briefing interfaces with accessible unavailable, loading, stale, and AI-failure fallback states in English and Arabic RTL.
+- [x] Add tests for grounding, missing/stale data, Risk Engine rejection explanations, paper-only boundaries, alert type/severity/deduplication/cooldown, fallback, entitlements, security, and ownership.
+- [x] Run TypeScript, full Vitest, production build, desktop/iPad/mobile and LTR/RTL QA; publish the Version 2.4 report, review the full tracker, and checkpoint only after all requirements are verified.
+- [x] Add an additive user-scoped risk-tolerance preference with schema migration, validation, UI, and regression coverage so Copilot context does not infer risk appetite from alert severity.
+- [x] Expose the persisted daily-briefing preference in Copilot while keeping briefing generation explicitly on-demand and without creating a schedule or background worker.
+- [x] Audit Version 2.5 requirements against existing paper-position monitoring, Risk Engine, Market Intelligence, Copilot, smart alerts, notifications, entitlements, and session-scoped refresh contracts; document conflicts before implementation.
+- [x] Design deterministic paper-position state transitions, proximity thresholds, fresh-data preconditions, transition audit evidence, and visible-session polling without a hidden background worker or duplicated risk calculations.
+- [x] Design additive user-scoped monitoring preferences, notification-channel consent, device registration lifecycle/revocation metadata, position monitoring events, and transition audit tables with TiDB-safe ownership boundaries.
+- [x] Implement a protected paper-position monitoring engine that reuses current price, risk, exposure, regime, and freshness evidence to emit auditable OPEN/WATCH/STOP_APPROACHING/TARGET_APPROACHING/RISK_INCREASED/DATA_STALE/PROTECTION_TRIGGERED/CLOSED transitions.
+- [x] Extend smart-alert evaluation and Alert Center with grouped monitoring events, current/previous values, severity, related position/strategy, history, read state, cooldown, deduplication, and fail-safe stale/unavailable behavior.
+- [x] Implement explicit in-app/email/push consent and device-readiness state with no external delivery, no fake delivery success, no private credentials, and revocable pending device registration architecture.
+- [x] Add manual/preview daily-briefing controls, reusable Copilot monitoring evidence explanations, and non-enforced Version 2.5 feature entitlements without scheduling or recurring delivery.
+- [x] Build responsive English/Arabic Nexus Monitor, advanced Alert Center, notification settings, device readiness, event evidence, and unavailable/failure interfaces linked only to real protected data.
+- [x] Add deterministic tests for all position-state transitions, stop/target proximity, regime/risk/stale failures, deduplication/cooldown, consent/device state/revocation, manual briefing, audit evidence, Copilot boundaries, ownership, and paper-only execution.
+- [x] Run TypeScript, full Vitest, production build, desktop/iPad/mobile and LTR/RTL QA; publish the Version 2.5 report, review the full tracker, and checkpoint only after all requirements are verified.
+- [x] Correct the Version 2.5 monitoring adapter to consume the existing portfolio exposure field from the Risk Engine snapshot, then cover the mapping in tests.
+- [x] Make deterministic Copilot fallback backward-compatible with pre-Version-2.5 evidence records that have no monitoring arrays, then rerun the focused evidence suite.
+- [x] Add explicit React imports to Version 2.5 rendered pages so static accessibility tests can render protected monitoring and notification boundaries.
+- [x] Build a route-and-control audit inventory covering every current page, navigation entry, action, protected contract, truth boundary, test evidence, and unresolved dependency without adding a new major feature.
+- [x] Verify actual CoinGecko/exchange market data, indicators, intelligence, candles, pagination, refresh/cache, stale/error/rate-limit states, and alert evidence through the live application and protected contracts.
+- [x] Verify paper orders, Risk Engine gates, portfolio ledger/P&L, monitoring, emergency stop, audit logs, Strategy Lab, deterministic backtesting, CSV validation, comparison, and parameter search using safe test cases and existing persistence boundaries.
+- [x] Verify Copilot grounding/fallback/evidence, alerts/read-history/cooldown, authentication/protected routes/user isolation, saved preferences, notification readiness, error handling, client-secret boundaries, and input validation.
+- [x] Repair each reproducible functional defect or misleading user-visible state; convert genuinely unavailable dependencies to truthful explicit states and add focused regression coverage.
+- [x] Verify mobile, iPad, desktop, LTR/RTL, keyboard/accessibility, performance request/render boundaries, TypeScript, full Vitest, production build, audit report, full tracker, and final checkpoint.
+- [x] Verify that Settings and WorkspaceDensity already share the same persistence key, and confirm compact/comfortable/spacious survives a fresh load without introducing a duplicate storage path.
+- [x] Audit the Version 2.6 Action Preview, Shield, timeline, intelligence, advanced alerts, risk-score, evidence graph, security mode, monitoring-health, incidents, approvals, search, and correlation requirements against current evidence, session monitoring, and paper-only contracts.
+- [x] Obtain an explicit architectural decision for the requested 24/7 heartbeat/monitoring, automatic degradation events, and automatic security-mode activation because these conflict with the currently approved no-always-on, session-scoped monitoring design. Superseded by the explicit managed Heartbeat decision recorded below.
+- [x] Obtain an explicit architectural decision for the requested 24/7 heartbeat/monitoring, automatic degradation events, and automatic security-mode activation because these conflict with the currently approved no-always-on, session-scoped monitoring design. User approved managed platform Heartbeat (option B).
+- [x] Implement an idempotent managed Heartbeat health-check path and its ownership-safe schedule record; create the configured five-minute task, persist its UID, and document that platform execution had not begun recording runs during post-publish verification.
+- [x] Correct the Shield candidate typing so rule-derived evidence remains statically validated before persistence.
+- [x] Add the localized Nexus Command navigation key in English and Arabic, then restore Navigation type safety after registering the Command route.
+- [x] After approval, design and implement only data-grounded Version 2.6 additions with immutable evidence, deterministic rule-derived scores, user ownership, no fabricated incidents/alerts/approvals, and no real execution path.
+- [x] Add comprehensive safety, ownership, correlation, approval, unavailable-state, LTR/RTL, responsive, TypeScript, full Vitest, and production-build verification before checkpointing the upgrade.
+- [x] Audit the complete premium redesign specification against all current routes, navigation groups, components, real market-data constraints, risk/monitoring/evidence contracts, theme, translation, auth, and paper-only execution boundaries.
+- [x] Define a non-gaming Nexus design system, information architecture, logo/mark strategy, icon/typography scale, subtle motion/background rules, and an LTR/RTL responsive layout contract without replacing verified functionality.
+- [x] Reorganize shared navigation, global command/search, command-center hierarchy, and collapsed/mobile patterns using only real reachable surfaces; do not create destination-less sections.
+- [x] Redesign the live market terminal, asset details, candlestick workspaces, and market directory using provider-verified data only, with unsupported timeframes and insufficient evidence shown explicitly.
+- [x] Redesign and unify risk, positions, monitoring health, events, evidence, incidents, alerts, approvals, Copilot, security, settings, and account screens around their existing protected data and actual available actions.
+- [x] Standardize English/Arabic copy, empty/loading/error/unavailable states, keyboard/focus semantics, density/responsiveness, and non-destructive Action Preview behavior across all redesigned areas.
+- [x] Add component, route, data-boundary, navigation, accessibility, RTL, and regression coverage; run desktop/iPad/mobile QA, TypeScript, full Vitest, production build, and write a complete redesign report before checkpointing.
+- [x] Complete the Black Label specification audit, identify every requested visual and interaction requirement, and map each requested chart/timeframe/control to a verified existing provider capability or an explicit unavailable state.
+- [x] Replace the current surface token system with the Black Label color, typography, border, density, chart, ticker, motion, and financial-number rules; preserve semantic data states and reduced-motion behavior.
+- [x] Rebuild the compact application shell around the Black Label top navigation, market ticker, compact five-group sidebar, responsive mobile drawer/bottom navigation, unique Nexus mark, and reachable real destinations.
+- [x] Reconstruct Nexus Command into a dense operational overview that uses live verified market values, protected command/risk/monitoring evidence, and explicit unavailable states without fabricated operational status.
+- [x] Rebuild Markets, market rows, asset detail, chart workspace, intelligence side panel, and real mini-candle rendering exclusively from provider-returned data; never expose unsupported chart timeframes as operational.
+- [x] Rebuild risk, monitoring, evidence, alerts, approvals, actions, security, settings, and Copilot around their existing protected contracts with compact Black Label information hierarchy and no invented controls.
+- [x] Add and update tests for Black Label layout contracts, ticker/microchart data boundaries, chart timeframe availability, navigation, RTL, responsive behavior, accessibility, TypeScript, full Vitest, browser-console review, and production build.
+- [x] Publish a Black Label implementation record and checkpoint only after all completed task items are marked accurately and all remaining provider or localization limits are explicitly documented.
+- [x] Audit V3.0 against current user, feature-entitlement, monitoring, alert, strategy, Copilot, and protected-router contracts; document conflicts and preserve the no-payment/no-exchange-execution boundary.
+- [x] Define centralized configurable Free, Pro, and Elite plan configuration with feature identifiers, usage limits, monitoring/alert/backtest/strategy/AI/portfolio limits, subscription states, and trial policy.
+- [x] Design and apply additive TiDB schema migrations for user subscriptions, immutable entitlement decisions, usage periods/counters, provider customer mappings, webhook deliveries, billing events, and auditable state changes.
+- [x] Implement server-side entitlement resolution, feature checks, usage enforcement, and protected tRPC middleware/helpers that never trust client plan state, URL parameters, or local storage.
+- [x] Implement a payment-provider abstraction and authenticated idempotent webhook ingestion/synchronization architecture without configuring Stripe, charging users, or accepting payment details.
+- [x] Connect existing advanced features to centralized server-side gates and usage limits while retaining all underlying market, risk, Strategy Lab, monitoring, Copilot, and paper-only behavior.
+- [x] Build responsive Black Label Pricing, Billing, upgrade lock, usage, and internal admin/debug visibility surfaces with truthful payment-not-configured and unavailable states.
+- [x] Add premium voice readiness configuration and an explicit not-configured administrative state without adding synthetic audio or a real voice provider.
+- [x] Add deterministic tests for all plans, subscription states, trial policy, gates, limits, client tampering rejection, provider abstraction, webhook idempotency, ownership, accessibility, TypeScript, full Vitest, and production build; document results and checkpoint V3.0.
+- [x] Audit the current protected subscription summary contract and Billing surface, then define the exact user-facing plan, state, period, feature, and remaining-usage representations without client-derived values.
+- [x] Add a responsive interactive subscription dashboard to Billing that presents the current server-owned plan and state, remaining usage per metered capability, gated feature status, payment-provider readiness, and links to Pricing.
+- [x] Add rendered-state coverage for loading, authenticated summary, unlimited/non-metered features, exhausted limits, and unavailable session behavior; run TypeScript, focused tests, full Vitest, production build, responsive QA, and checkpoint the update.
+- [x] Complete the V3.1 specification audit and inspect configured connectors, secrets, and provider capabilities for legitimate on-chain data; document any unconfigured source as NOT CONFIGURED and do not substitute demo activity.
+- [x] Create a provider-neutral public on-chain data contract retaining source, timestamp, chain, asset, public wallet reference, freshness, provider status, observed/model-derived classification, and VERIFIED/PARTIAL/STALE/UNAVAILABLE data quality.
+- [x] Add additive persistence for source-backed public-wallet observations, user-owned watchlists, provider receipts/cache metadata, and explainable score evidence. Cluster, entity-label, NFT, contract-trace, and market-flow persistence remain explicitly DATA SOURCE NOT AVAILABLE rather than synthetic records.
+- [x] Implement verified-data validation, provider-isolated caching, bounded transfer pagination, deduplication, rate-limit/unavailable outcomes, and explainable score calculations that return INSUFFICIENT EVIDENCE; unverified flow/cluster calculations are disclosed as unavailable.
+- [x] Reuse V3.0 entitlements and evidence-based Copilot interfaces for Smart Money without automatic execution or a duplicate alert system. No Risk Engine paper-trade handoff is offered because a public transfer lacks a verified tradable asset/entry/stop plan; this is an explicit paper-only safety boundary.
+- [x] Build responsive Smart Money Radar, Wallet Intelligence, watchlist, contextual Copilot, and explicit Flow/Cluster/Early Activity/Smart Money-versus-Market source-boundary surfaces; only Ethereum/Base wallet observations render as data.
+- [x] Add deterministic address, source, freshness, data-quality, caching, explainability, ownership, entitlement, Copilot, Webhook signature, TypeScript, full Vitest, and production-build coverage. Alert/Risk handoff remains intentionally absent without an evidence-qualified trade plan.
+- [x] Publish a V3.1 implementation record and checkpoints with provider coverage and unconfigured-source limitations stated explicitly.
+- [x] Superseded by explicit user direction: do not integrate Moralis or request a Moralis credential; use an Alchemy primary provider behind a neutral adapter contract.
+- [x] Superseded by explicit user direction: require only ALCHEMY_API_KEY server-side; verify it with provider health tests and never render it or persist it in browser-visible state.
+- [x] Implement configuration-driven verified chain capabilities for Ethereum and Base; do not present additional EVM networks or Solana as supported until the active Alchemy capability has been verified.
+- [x] Add normalized public-wallet persistence for active Alchemy Ethereum/Base wallets, transactions/transfers, balances, snapshots, scores, sync receipts, provider events, hashes, chains, and blocks while preventing duplicates and private credential storage. NFT and contract-trace rows remain DATA SOURCE NOT AVAILABLE.
+- [x] Build real Ethereum/Base wallet lookup, initial historical transfer sync, source-backed observational intelligence and confidence scoring, and public-address watchlists. Flow/cluster/early-activity claims are exposed only as unavailable source categories until a compatible verified dataset is configured.
+- [x] Superseded by explicit user direction: Moralis is not integrated. Alchemy implements authenticated HMAC intake, idempotent event processing, incremental watched-wallet sync, health/rate-limit visibility, and no high-frequency polling. A live Alchemy-dashboard delivery remains an external activation step.
+- [x] Connect Smart Money access to Free/Pro/Elite centralized entitlements, owned-wallet Copilot context, Black Label Radar/watchlist/admin surfaces, and truthful NOT CONFIGURED/UNAVAILABLE/INSUFFICIENT DATA states. No paper-trade initiation is exposed without a verified asset, price, entry, stop, and Risk Engine plan.
+- [x] Execute real authorized Alchemy provider smoke tests for Ethereum and Base, and test provider configuration, invalid signatures, duplicate delivery handling, ownership, source isolation, score evidence, TypeScript, full Vitest, and production build. Solana, alerts, and Risk Engine handoff remain explicit DATA SOURCE NOT AVAILABLE or safety-boundary outcomes rather than fabricated tests.
+- [x] Replace the planned Moralis primary integration with an Alchemy-only server-side primary provider; retain Moralis/other providers only as inactive adapter contracts and do not request or store a Moralis credential.
+- [x] Require only ALCHEMY_API_KEY as a server-side secret and verify Alchemy connection, Ethereum and Base capabilities, real public-wallet balance/transaction/transfer data, caching, normalization, and database sync before representing the provider as connected.
+- [x] Implement configuration-driven Alchemy networks beginning with Ethereum and Base, then expose additional EVM networks only after their active account capability is verified; identify Solana and any unavailable wallet/P&L/DEX endpoint as DATA SOURCE NOT AVAILABLE rather than substituting data.
+- [x] Build source-backed Wallet Intelligence and proprietary explainable Smart Money/Confidence analytics only from persisted Alchemy observations, including explicit minimum-data thresholds and transaction references for every computed score or signal.
+- [x] Implement Alchemy-compatible authenticated webhook/event intake with raw-body HMAC validation, an idempotent delivery inbox, incremental re-sync of already watched public wallets, provider health/rate-limit telemetry, and no in-process polling timer. A live dashboard delivery remains a documented external activation step; no event-derived activity has been fabricated.
+- [x] Add Admin Settings → Integrations → On-Chain Data visibility for Alchemy status, verified networks, health, sync timing, requests, errors, and rate limits without displaying or persisting API secrets in UI or database.
+- [x] Complete the authenticated Smart Money watchlist interaction: reopen a user-owned wallet through the protected Alchemy lookup path and permit Copilot context only after a user-owned watchlist identifier is available.
+- [x] Add rendered-state Smart Money coverage for unauthenticated access, provider-connected status, source-backed user-owned watchlist data, score metadata, and data-quality visibility; rerun TypeScript, the complete Vitest suite, and the production build.
+- [x] بحث وتقييم مزودي بيانات XAU/USD الموثوقين وتوثيق التغطية، التسعير، الحدود، التأخير، وOHLC قبل طلب أي مفتاح.
+- [x] اختيار مزود بيانات سوق للذهب بعد عرض الخيارات على المستخدم، وإضافة مفتاحه كسر خادمي فقط عند موافقة المستخدم.
+- [x] إنشاء عقد MarketDataProvider مستقل وسجل أصول متعدد الأنواع يفصل CRYPTO وCOMMODITY وFOREX وSTOCK وINDEX وREAL_WORLD_ASSET عن بيانات السلاسل.
+- [x] إضافة تعريف Gold — XAU/USD كسلعة، وتخزين/ذاكرة مؤقتة معزولة للمصدر لبيانات السعر والشموع والحالة عند الحاجة.
+- [x] بناء تكامل الخلفية الحقيقي لسعر XAU/USD وOHLC والتغطية الزمنية وحالة السوق وحدود المزود، مع عدم تركيب أو اختلاق بيانات مفقودة.
+- [x] دمج الذهب في Markets والبحث وقائمة المراقبة وتفاصيل الأصل ومساحة الرسم، وإخفاء الفواصل الزمنية التي لا يثبت المزود دعمها.
+- [x] استبعاد الذهب صراحةً من محرك Smart Money القائم على السلاسل ومن ملكية المحفظة المفترضة، مع عرض بيانات Market Intelligence المستقبلية كحد منفصل.
+- [x] إضافة اختبارات حالات XAU/USD المتحققة للبحث والسعر والشموع والحالة وتوقف المزود وتحديد المعدل والاستجابة غير الصالحة وغياب المفتاح وقائمة المراقبة.
+- [x] التحقق من TypeScript وVitest والبناء الإنتاجي وواجهات RTL/LTR والاستجابة، ثم حفظ إصدار وتقرير مزود الذهب والقيود ومفتاح API المطلوب.
+- [x] تنفيذ فحص API حقيقي ومحدود بعد استلام المفتاح للتحقق من XAU/USD price وquote وtime_series والتاريخ والفواصل والترخيص، ثم تحويل كل فشل entitlement أو خطة إلى الحالة الصادقة المناسبة دون كشف المفتاح.
+- [ ] تجهيز حزمة نقل Nexus تشمل المصدر والتوثيق وملفات البناء، مع استثناء الأسرار وnode_modules ومخرجات البناء والملفات المحلية غير اللازمة.
+- [ ] التحقق من الحزمة وتقديمها مع إرشادات تشغيل مختصرة ومتغيرات البيئة المطلوبة بأسماء فقط دون قيم.
