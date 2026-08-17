@@ -85,6 +85,9 @@ export async function registerMonitoringHeartbeat(): Promise<RegistrationOutcome
   // stays UNCONFIGURED, which getMonitoringHealth() reports accurately.
   try {
     const remote = await listHeartbeatJobs(PROJECT_OWNER_SESSION);
+    if (!remote || !Array.isArray(remote.jobs)) {
+      throw new Error("Heartbeat service returned an invalid job-list response.");
+    }
     const match = remote.jobs.find(job => job.name === NEXUS_MONITORING_SCHEDULE_KEY);
 
     if (match) {

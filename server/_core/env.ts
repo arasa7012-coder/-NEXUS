@@ -1,6 +1,6 @@
 export const ENV = {
   appId: process.env.VITE_APP_ID ?? "",
-  cookieSecret: process.env.JWT_SECRET ?? "",
+  cookieSecret: process.env.NEXUS_JWT_SECRET || process.env.JWT_SECRET || "",
   databaseUrl: process.env.DATABASE_URL ?? "",
   encryptionKey: process.env.ENCRYPTION_KEY ?? "",
   oAuthServerUrl: process.env.OAUTH_SERVER_URL ?? "",
@@ -28,7 +28,7 @@ const REQUIRED_ENV: ReadonlyArray<{
   minBytes?: number;
   purpose: string;
 }> = [
-  { name: "JWT_SECRET", value: ENV.cookieSecret, minBytes: 32, purpose: "signs and verifies session cookies" },
+  { name: "NEXUS_JWT_SECRET or JWT_SECRET", value: ENV.cookieSecret, minBytes: 32, purpose: "signs and verifies session cookies" },
   { name: "DATABASE_URL", value: ENV.databaseUrl, purpose: "MySQL/TiDB connection string" },
   { name: "ENCRYPTION_KEY", value: ENV.encryptionKey, minBytes: 32, purpose: "encrypts stored exchange API credentials at rest" },
   { name: "OAUTH_SERVER_URL", value: ENV.oAuthServerUrl, purpose: "OAuth token exchange and user info endpoint" },

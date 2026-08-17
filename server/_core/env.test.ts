@@ -1,6 +1,6 @@
 import { afterEach, describe, expect, it, vi } from "vitest";
 
-const REQUIRED = ["JWT_SECRET", "DATABASE_URL", "ENCRYPTION_KEY", "OAUTH_SERVER_URL", "VITE_APP_ID"] as const;
+const REQUIRED = ["JWT_SECRET", "NEXUS_JWT_SECRET", "DATABASE_URL", "ENCRYPTION_KEY", "OAUTH_SERVER_URL", "VITE_APP_ID"] as const;
 const original: Record<string, string | undefined> = {};
 for (const key of REQUIRED) original[key] = process.env[key];
 
@@ -39,6 +39,12 @@ describe("required environment validation", () => {
     setAll({ ...VALID, JWT_SECRET: "short" });
     const { assertRequiredEnv } = await freshEnv();
     expect(() => assertRequiredEnv()).toThrow(/JWT_SECRET is too short/);
+  });
+
+  it("uses the independent NEXUS session secret when the platform JWT secret is short", async () => {
+    setAll({ ...VALID, JWT_SECRET: "short", NEXUS_JWT_SECRET: "n".repeat(32) });
+    const { assertRequiredEnv } = await freshEnv();
+    expect(() => assertRequiredEnv()).not.toThrow();
   });
 
   it("rejects a short ENCRYPTION_KEY", async () => {
