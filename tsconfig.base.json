@@ -1,0 +1,40 @@
+{
+  "$schema": "https://json.schemastore.org/tsconfig",
+  "compilerOptions": {
+    "target": "ES2022",
+    "lib": ["ES2022"],
+    "module": "NodeNext",
+    "moduleResolution": "NodeNext",
+
+    /* Project references require emitted declarations: a referencing project
+       consumes the .d.ts, not the source. `noEmit` is therefore incompatible
+       with `--build` and was the single largest reason `tsc --build` could not
+       have succeeded against the previous configuration. */
+    "composite": true,
+    "declaration": true,
+    "declarationMap": true,
+    "sourceMap": true,
+    "incremental": true,
+
+    /* Source files carry explicit .ts specifiers so Node can execute them
+       directly with --experimental-strip-types. `rewriteRelativeImportExtensions`
+       (TS 5.7+) rewrites those to .js on emit, which is what makes the same
+       files both runnable today and compilable later. */
+    "allowImportingTsExtensions": true,
+    "rewriteRelativeImportExtensions": true,
+
+    "strict": true,
+    "exactOptionalPropertyTypes": true,
+    "noUncheckedIndexedAccess": true,
+    "noImplicitOverride": true,
+    "noFallthroughCasesInSwitch": true,
+    "noImplicitReturns": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "verbatimModuleSyntax": true,
+    "isolatedModules": true,
+    "forceConsistentCasingInFileNames": true,
+    "skipLibCheck": true
+  },
+  "exclude": ["node_modules", "dist"]
+}

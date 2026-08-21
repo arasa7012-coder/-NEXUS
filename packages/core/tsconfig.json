@@ -1,0 +1,11 @@
+{
+  "extends": "../../tsconfig.base.json",
+  "compilerOptions": {
+    "outDir": "dist",
+    "rootDir": ".",
+    /* The core must remain runnable on Hermes as well as Node, so it may not
+       reference Node globals. No "types" entry is the enforcement. */
+    "types": []
+  },
+  "include": ["src/**/*.ts"]
+}

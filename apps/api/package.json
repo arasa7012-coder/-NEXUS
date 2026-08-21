@@ -1,0 +1,28 @@
+{
+  "name": "@nexus/api",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "NEXUS backend: HTTP API, domain services, realtime.",
+  "main": "./dist/src/server.js",
+  "scripts": {
+    "build": "tsc --build",
+    "dev": "node --experimental-strip-types --watch src/server.ts",
+    "start": "node dist/src/server.js",
+    "verify": "node --experimental-strip-types --conditions=nexus-source verify.ts",
+    "verify:edge": "node --experimental-strip-types --conditions=nexus-source verify.edge.ts",
+    "verify:e2e": "node --experimental-strip-types --conditions=nexus-source verify.e2e.ts",
+    "migrate": "node --experimental-strip-types scripts/migrate.ts"
+  },
+  "dependencies": {
+    "@nexus/contracts": "workspace:*",
+    "@nexus/core": "workspace:*",
+    "drizzle-orm": "^0.36.4",
+    "mysql2": "^3.11.5"
+  },
+  "devDependencies": {
+    "@types/node": "^22.10.2",
+    "drizzle-kit": "^0.28.1",
+    "typescript": "5.9.3"
+  }
+}

@@ -1,0 +1,25 @@
+{
+  "name": "nexus",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "engines": {
+    "node": ">=22.6"
+  },
+  "scripts": {
+    "verify": "node --experimental-strip-types tools/verify-all.ts",
+    "check": "tsc --build",
+    "check:clean": "tsc --build --clean && tsc --build --force",
+    "build": "tsc --build",
+    "api:dev": "pnpm --filter @nexus/api dev",
+    "api:migrate": "pnpm --filter @nexus/api migrate",
+    "mobile:start": "pnpm --filter @nexus/mobile start",
+    "mobile:doctor": "pnpm --filter @nexus/mobile exec expo-doctor",
+    "check:packages": "tsc --build packages/core packages/contracts packages/design",
+    "check:api": "tsc -p apps/api/tsconfig.typecheck.json"
+  },
+  "devDependencies": {
+    "typescript": "5.9.3"
+  },
+  "packageManager": "pnpm@10.4.1"
+}

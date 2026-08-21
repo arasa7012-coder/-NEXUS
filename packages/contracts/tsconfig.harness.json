@@ -1,0 +1,17 @@
+{
+  /* Verification harnesses run under Node and legitimately use console and
+     process. They are NOT part of the shippable library, which must stay free
+     of any host-environment global so it loads on Hermes. Keeping them in a
+     separate project is what lets the library's `types: []` stay honest.
+
+     Requires @types/node, so this project is excluded from the root build
+     graph until dependencies can be installed. */
+  "extends": "../../tsconfig.base.json",
+  "compilerOptions": {
+    "composite": false,
+    "noEmit": true,
+    "types": ["node"],
+    "lib": ["ES2022"]
+  },
+  "include": ["verify.ts"]
+}

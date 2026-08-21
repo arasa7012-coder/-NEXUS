@@ -1,0 +1,22 @@
+{
+  "extends": "../../tsconfig.base.json",
+  "compilerOptions": {
+    "outDir": "dist",
+    "rootDir": ".",
+    "jsx": "react-jsx",
+    "lib": ["ES2022", "DOM"],
+    /* Client-only. No "node" here: importing a Node builtin into the app
+       bundle is a build error rather than a runtime crash on device. */
+    "types": ["react", "react-native"],
+    "moduleResolution": "bundler",
+    "module": "ESNext",
+    "allowJs": true
+  },
+  "include": ["App.tsx", "index.js", "src/**/*.ts", "src/**/*.tsx", "verify.ts"],
+  /* No reference to packages/core: the mobile app must not be able to
+     re-implement risk or intelligence locally, so it cannot import it. */
+  "references": [
+    { "path": "../../packages/contracts" },
+    { "path": "../../packages/design" }
+  ]
+}
