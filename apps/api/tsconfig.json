@@ -1,0 +1,11 @@
+{
+  "extends": "../../tsconfig.base.json",
+  "compilerOptions": {
+    "outDir": "dist",
+    "rootDir": ".",
+    /* Server-only. Node types belong here and nowhere in packages/. */
+    "types": ["node"]
+  },
+  "include": ["src/**/*.ts", "verify.ts", "verify.edge.ts", "verify.e2e.ts"],
+  "references": [{ "path": "../../packages/core" }, { "path": "../../packages/contracts" }]
+}

@@ -1,0 +1,27 @@
+{
+  "expo": {
+    "name": "NEXUS",
+    "slug": "nexus",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "scheme": "nexus",
+    "userInterfaceStyle": "dark",
+    "backgroundColor": "#07090D",
+    "ios": {
+      "supportsTablet": false,
+      "bundleIdentifier": "com.nexus.app",
+      "infoPlist": {
+        "ITSAppUsesNonExemptEncryption": false
+      }
+    },
+    "android": {
+      "package": "com.nexus.app",
+      "adaptiveIcon": { "backgroundColor": "#07090D" }
+    },
+    "plugins": ["expo-secure-store", "expo-notifications"],
+    "extra": {
+      "//": "The API base URL is injected per environment (§30). No secret is ever placed here — the mobile app holds no provider credentials.",
+      "apiBaseUrl": "https://api.nexus.local"
+    }
+  }
+}

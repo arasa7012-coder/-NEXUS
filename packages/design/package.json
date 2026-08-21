@@ -1,0 +1,28 @@
+{
+  "name": "@nexus/design",
+  "version": "0.1.0",
+  "type": "module",
+  "description": "NEXUS design tokens. Zero runtime dependencies.",
+  "exports": {
+    ".": {
+      "nexus-source": "./src/tokens.ts",
+      "types": "./dist/src/tokens.d.ts",
+      "import": "./dist/src/tokens.js",
+      "default": "./dist/src/tokens.js"
+    }
+  },
+  "main": "./dist/src/tokens.js",
+  "types": "./dist/src/tokens.d.ts",
+  "files": [
+    "dist"
+  ],
+  "sideEffects": false,
+  "scripts": {
+    "build": "tsc --build",
+    "verify": "node --experimental-strip-types --conditions=nexus-source verify.ts"
+  },
+  "dependencies": {},
+  "peerDependencies": {
+    "@nexus/contracts": "workspace:*"
+  }
+}

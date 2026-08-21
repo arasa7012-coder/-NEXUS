@@ -1,0 +1,25 @@
+{
+  "name": "@nexus/core",
+  "version": "0.1.0",
+  "type": "module",
+  "description": "NEXUS deterministic core \u2014 intelligence, risk, identity. Zero runtime dependencies; runs on Node and Hermes.",
+  "exports": {
+    ".": {
+      "nexus-source": "./src/index.ts",
+      "types": "./dist/src/index.d.ts",
+      "import": "./dist/src/index.js",
+      "default": "./dist/src/index.js"
+    }
+  },
+  "main": "./dist/src/index.js",
+  "types": "./dist/src/index.d.ts",
+  "files": [
+    "dist"
+  ],
+  "sideEffects": false,
+  "scripts": {
+    "build": "tsc --build",
+    "verify": "node --experimental-strip-types --conditions=nexus-source verify.ts"
+  },
+  "dependencies": {}
+}

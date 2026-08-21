@@ -1,0 +1,21 @@
+{
+  /* Local-only type-check project.
+     Uses an @types/node copy already present on this machine so the server
+     code can be genuinely type-checked without a registry. NOT part of the
+     build graph: the real build resolves @types/node from node_modules after
+     `pnpm install`. Drizzle/mysql2 types remain unavailable here, so the
+     adapters that import them stay excluded and unverified. */
+  "extends": "../../tsconfig.base.json",
+  "compilerOptions": {
+    "composite": false,
+    "noEmit": true,
+    "types": ["node"],
+    "typeRoots": ["../../.types-scratch/@types"],
+    "paths": {
+      "@nexus/core": ["../../packages/core/src/index.ts"],
+      "@nexus/contracts": ["../../packages/contracts/src/index.ts"]
+    }
+  },
+  "include": ["src/**/*.ts"],
+  "exclude": ["src/adapters/drizzle/**", "src/server.ts", "scripts/**"]
+}

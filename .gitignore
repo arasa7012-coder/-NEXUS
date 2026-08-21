@@ -1,23 +1,9 @@
 node_modules/
 dist/
-build/
-*.tsbuildinfo
-
-# Secrets — never commit
+.expo/
+*.log
 .env
 .env.*
 !.env.example
-
-# Local tooling output
-.manus-logs/
-coverage/
-*.log
-
-# OS / editor
+*.tsbuildinfo
 .DS_Store
-Thumbs.db
-.idea/
-.vscode/
-*.swp
-.project-config.json
-todo.md
