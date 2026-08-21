@@ -12,6 +12,25 @@
  * replacement for — `tsc --build` and the Expo build.
  */
 import { spawnSync } from "node:child_process";
+import { existsSync } from "node:fs";
+import { dirname, join, resolve } from "node:path";
+import { fileURLToPath } from "node:url";
+
+const repoRoot = resolve(dirname(fileURLToPath(import.meta.url)), "..");
+
+// A fresh clone has no node_modules, so `@nexus/*` would not resolve. The
+// links need no network, so create them rather than failing with a module-not-
+// found error that looks like a broken checkout.
+if (!existsSync(join(repoRoot, "apps", "api", "node_modules", "@nexus", "core"))) {
+  const link = spawnSync("node", ["--experimental-strip-types", join(repoRoot, "tools", "link-workspace.ts")], {
+    cwd: repoRoot, encoding: "utf8",
+  });
+  if (link.status !== 0) {
+    console.error("Failed to link workspace packages:\n" + (link.stdout ?? "") + (link.stderr ?? ""));
+    process.exit(1);
+  }
+  console.log((link.stdout ?? "").trim());
+}
 
 const SUITES = [
   ["core", "packages/core", "verify.ts"],
